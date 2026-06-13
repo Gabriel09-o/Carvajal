@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: e-commerce
+  datasource:
+    #url: jdbc:postgresql://localhost:5432/equipofutbol?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSL=false
+    url: jdbc:mysql://localhost:3306/ecommerce
+    #?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSL=false
+    username: root
+    password: 12345
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        "[format_sql]": true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+server:
+  port: 9090
+  servlet:
+    context-path: /api/v1/
+
+logging:
+  level:
+    "[org.springframework]": INFO
+
+security:
+  jwt:
+    secret-key: WCrD7ZwsNH2yZx4d29X3522BEAYTjm7BiNJxi9xksjU=
+    token-expiration: 600000
+
+
+
+
+
